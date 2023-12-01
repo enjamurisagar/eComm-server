@@ -38,8 +38,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-app.use(express.static(__dirname + "public/assets"));
-app.use("/assets", express.static("public/assets")); //setting the assets in public folder
+app.use("/assets", express.static(path.join(__dirname, "public/assets"))); //setting the assets in public folder
 
 //FILE STORAGE
 
